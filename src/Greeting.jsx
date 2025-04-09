@@ -2,7 +2,7 @@ import React from 'react'
 
 const Greeting = () => {
 
-    const name = "John Doe";
+    const name = "Donald Trump";
 
     
     return (

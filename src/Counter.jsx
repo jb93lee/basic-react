@@ -1,16 +1,33 @@
-import React from 'react'
-import Button from './Button'
+import React, { useState } from 'react';
+// import Button from './Button';
 
 const Counter = () => {
-  return (
-    <div>
-        <h1>0</h1>
-        <div style={{ display: 'flex', gap: '10px' }}>
-        <Button />
-        <Button />
-        </div>
-    </div>
-  )
-}
+    // state
+    const [count, setCount] = useState(0);
 
-export default Counter
+    // logic
+    const handleChange = (amount) => {
+        if (count >= 10 && amount > 0) {
+            return;
+        }
+        if (count <= 0 && amount < 0) {
+            return;
+        }
+        setCount(count + amount);
+    };
+
+    // view
+    return (
+        <div>
+            <h1>{count}</h1>
+            <div style={{ display: 'flex', gap: '10px' }}>
+                {/* <Button />
+                <Button /> */}
+                <button type='button' onClick={() => handleChange(1)}>+1</button>
+                <button type='button' onClick={() => handleChange(-1)}>-1</button>
+            </div>
+        </div>
+    );
+};
+
+export default Counter;
