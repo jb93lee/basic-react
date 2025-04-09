@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 // import Button from './Button';
 
-const Counter = () => {
+const Counter = ({num}) => {
     // state
     const [count, setCount] = useState(0);
+    // 버튼 눌렀을때 위에도 동작함(리렌더링)
 
     // logic
     const handleChange = (amount) => {
@@ -23,8 +24,8 @@ const Counter = () => {
             <div style={{ display: 'flex', gap: '10px' }}>
                 {/* <Button />
                 <Button /> */}
-                <button type='button' onClick={() => handleChange(1)}>+1</button>
-                <button type='button' onClick={() => handleChange(-1)}>-1</button>
+                <button type='button' onClick={() => handleChange(num)}>+{num}</button>
+                <button type='button' onClick={() => handleChange(-num)}>-{num}</button>
             </div>
         </div>
     );
